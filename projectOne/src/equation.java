@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class lessonOne {
+public class equation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String equation = scanner.nextLine();
@@ -53,16 +53,16 @@ public class lessonOne {
             int thirdNumber = Integer.parseInt(thirdStr);
             if ("=".equals(secondStr) && "-".equals(fourthStr)) {
                 x = thirdNumber - firstNumber;
-               System.out.println(x);
+                System.out.println(x);
             } else if ("=".equals(secondStr) && "+".equals(fourthStr)) {
                 x = firstNumber - thirdNumber;
-               System.out.println(x);
+                System.out.println(x);
             } else if ("-".equals(secondStr)) {
                 x = firstNumber - thirdNumber;
-               System.out.println(x);
+                System.out.println(x);
             } else {
                 x = thirdNumber + firstNumber;
-               System.out.println(x);
+                System.out.println(x);
             }
         }
     }
