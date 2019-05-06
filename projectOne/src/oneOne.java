@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class oneOne {
@@ -9,6 +8,9 @@ public class oneOne {
         System.out.println("Что сделать? Введите номер операции:");
         System.out.println("1 - Вывести предложение в обратном порядке");
         System.out.println("2 - Разбить предложение на слова");
+        System.out.println("3 - Заменить все пробелы на *");
+        System.out.println("4 - Вывести в UpperCase");
+        System.out.println("5 - Вывести с 5 по 10 символ");
         int numberOfOption = scanner.nextInt();
         int lengthOfString = sentence.length();
         int number = lengthOfString - 1;
@@ -46,6 +48,12 @@ public class oneOne {
                     System.out.println(wordMiddle);
                 }
             }
+        } else if (numberOfOption == 3) {
+            System.out.println(sentence.replace(" ", "*"));
+        } else if (numberOfOption == 4) {
+            System.out.println(sentence.toUpperCase());
+        } else if (numberOfOption == 5) {
+            System.out.println(sentence.substring(4,9));
         }
     }
 }
