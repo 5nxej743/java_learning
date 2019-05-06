@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class oneOne {
@@ -12,7 +13,7 @@ public class oneOne {
         int lengthOfString = sentence.length();
         int number = lengthOfString - 1;
         if (numberOfOption == 1) {
-            char charArray [] = new char[lengthOfString];
+            char charArray[] = new char[lengthOfString];
             for (int i = 0; i < lengthOfString; i++) {
                 char letterChar = sentence.charAt(i);
                 charArray[number] = letterChar;
@@ -20,14 +21,30 @@ public class oneOne {
             }
             System.out.println(charArray);
         } else if (numberOfOption == 2) {
-            char charArray [] = new char[lengthOfString];
+            int amountOfSpaces = sentence.length() - sentence.replace(" ", "").length();
+            int intArray[] = new int[amountOfSpaces];
+            int index = 0;
             for (int i = 0; i < lengthOfString; i++) {
                 char letterChar = sentence.charAt(i);
-                if (' ' != letterChar) {
-                    charArray[i] = letterChar;
-                } else {
-                    System.out.println(charArray);
+                if (' ' == letterChar) {
+                    intArray[index] = i;
+                    index = index + 1;
+                }
             }
+            char charArray1[] = new char[lengthOfString];
+            for (int i = 0; i< amountOfSpaces; i++) {
+                if (i == 0) {
+                    String firstWord = sentence.substring(i, intArray[i]);
+                    String wordMiddle = sentence.substring(intArray[i]+1,intArray[i+1]);
+                    System.out.println(firstWord);
+                    System.out.println(wordMiddle);
+                } else if (i == amountOfSpaces -1){
+                    String wordLast = sentence.substring(intArray[i]+1);
+                    System.out.println(wordLast);
+                } else {
+                    String wordMiddle = sentence.substring(intArray[i]+1,intArray[i+1]);
+                    System.out.println(wordMiddle);
+                }
             }
         }
     }
