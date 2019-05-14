@@ -11,11 +11,7 @@ public class oneFive {
             String lastNameEmptyArray[] = {"*","*","*","*","*","*"};
             String usedLettersArray [] = new String [100];
             int nextIndex = 0;
-        for (int j = 0; j < 100; j++) {
-            if (Arrays.equals(nameArray,nameArrayEmpty) && Arrays.equals(lastNameArray,lastNameEmptyArray)) {
-                System.out.println("Игра окончена!");
-                break;
-            }
+        while (!(Arrays.equals(nameArray,nameArrayEmpty) && Arrays.equals(lastNameArray,lastNameEmptyArray))) {
             System.out.println("Введите слово или букву чтобы угадать имя и фамилию");
             String input = scanner.nextLine();
             if (input.toLowerCase().equals(name.toLowerCase())) {
@@ -27,7 +23,7 @@ public class oneFive {
                 System.out.println("Вы угадали фамилию!");
                 System.out.println("Ваш результат: " + Arrays.toString(nameArrayEmpty).replace("[","").replace("]","").replace(",","").replace(" ","") + " " + lastName);
             } else if (input.length() == 1) {
-                if (Arrays.asList(usedLettersArray).contains(input.toLowerCase())){
+                if (Arrays.asList(usedLettersArray).contains(input.toLowerCase())) {
                     System.out.println("Вы уже вводили этот символ. Попробуйте угадать с другим.");
                     continue;
                 }
@@ -38,7 +34,7 @@ public class oneFive {
                     for (int i = 0; i < nameArray.length; i++) {
                         if (nameArray[i].equals(input)) {
                             nameArrayEmpty[i] = input;
-                            if (!Arrays.asList(usedLettersArray).contains(input.toLowerCase())){
+                            if (!Arrays.asList(usedLettersArray).contains(input.toLowerCase())) {
                                 usedLettersArray[nextIndex] = input;
                                 ++nextIndex;
                             }
@@ -54,7 +50,7 @@ public class oneFive {
                     for (int i = 0; i < nameArray.length; i++) {
                         if (nameArray[i].equals(input)) {
                             nameArrayEmpty[i] = input;
-                            if (!Arrays.asList(usedLettersArray).contains(input.toLowerCase())){
+                            if (!Arrays.asList(usedLettersArray).contains(input.toLowerCase())) {
                                 usedLettersArray[nextIndex] = input;
                                 ++nextIndex;
                             }
@@ -65,7 +61,7 @@ public class oneFive {
                     for (int i = 0; i < lastNameArray.length; i++) {
                         if (lastNameArray[i].equals(input)) {
                             lastNameEmptyArray[i] = input;
-                            if (!Arrays.asList(usedLettersArray).contains(input.toLowerCase())){
+                            if (!Arrays.asList(usedLettersArray).contains(input.toLowerCase())) {
                                 usedLettersArray[nextIndex] = input;
                                 ++nextIndex;
                             }
@@ -73,16 +69,17 @@ public class oneFive {
                     }
                 } else {
                     System.out.println("Вы не угадали!");
-                    if (!Arrays.asList(usedLettersArray).contains(input.toLowerCase())){
+                    if (!Arrays.asList(usedLettersArray).contains(input.toLowerCase())) {
                         usedLettersArray[nextIndex] = input;
                         ++nextIndex;
                     }
                 }
-                System.out.println("Ваш результат: " + Arrays.toString(nameArrayEmpty).replace("[","").replace("]","").replace(",","").replace(" ","") + " " + Arrays.toString(lastNameEmptyArray).replace("[","").replace("]","").replace(",","").replace(" ",""));
+                System.out.println("Ваш результат: " + Arrays.toString(nameArrayEmpty).replace("[", "").replace("]", "").replace(",", "").replace(" ", "") + " " + Arrays.toString(lastNameEmptyArray).replace("[", "").replace("]", "").replace(",", "").replace(" ", ""));
             } else {
                 System.out.println("Вы не угадали!");
                 System.out.println("Ваш результат: " + Arrays.toString(nameArrayEmpty).replace("[","").replace("]","").replace(",","").replace(" ","") + " " + Arrays.toString(lastNameEmptyArray).replace("[","").replace("]","").replace(",","").replace(" ",""));
             }
         }
+        System.out.println("Игра окончена!");
     }
 }

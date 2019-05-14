@@ -34,7 +34,7 @@ public class oneOne {
                 }
             }
             char charArray1[] = new char[lengthOfString];
-            for (int i = 0; i< amountOfSpaces; i++) {
+            for (int i = 0; i < amountOfSpaces; i++) {
                 if (i == 0) {
                     String firstWord = sentence.substring(i, intArray[i]);
                     String wordMiddle = sentence.substring(intArray[i]+1,intArray[i+1]);
