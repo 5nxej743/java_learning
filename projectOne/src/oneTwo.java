@@ -26,6 +26,8 @@ public class oneTwo {
             case 7:
                 System.out.println("Воскресенье");
                 break;
+            default:
+                System.out.println("Incorrect input. Insert 1-7!");
         }
     }
 }
